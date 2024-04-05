@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu"
     tools:context=".MainActivity2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/pizza"
+            android:layout_marginTop="230dp"
+            android:layout_marginStart="35dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PIZZAS"
+            android:textSize="20dp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="260dp"
+            android:layout_marginStart="240dp"/>
+
+        <Button
+            android:id="@+id/pizzas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELEGIR PIZZAS"
+            android:layout_marginTop="290dp"
+            android:layout_marginStart="200dp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bebidas1"
+            android:layout_marginTop="440dp"
+            android:layout_marginStart="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BEBIDAS"
+            android:textSize="20sp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="240dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELEGIR BEBIDAS"
+            android:layout_marginTop="520dp"
+            android:layout_marginStart="200dp"/>
+
+</RelativeLayout>
