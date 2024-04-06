@@ -49,14 +49,14 @@
             android:fontFamily="casual"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_marginTop="490dp"
+            android:layout_marginTop="470dp"
             android:layout_marginStart="240dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ELEGIR BEBIDAS"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="500dp"
             android:layout_marginStart="200dp"/>
 
 </RelativeLayout>
