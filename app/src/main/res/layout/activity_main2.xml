@@ -12,7 +12,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/pizza"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="260dp"
             android:layout_marginStart="35dp" />
 
         <TextView
@@ -23,7 +23,7 @@
             android:fontFamily="casual"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="265dp"
             android:layout_marginStart="240dp"/>
 
         <Button
@@ -38,7 +38,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/bebidas1"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="450dp"
             android:layout_marginStart="35dp"/>
 
         <TextView
@@ -49,7 +49,7 @@
             android:fontFamily="casual"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_marginTop="470dp"
+            android:layout_marginTop="500dp"
             android:layout_marginStart="240dp"/>
 
         <Button
@@ -57,7 +57,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ELEGIR BEBIDAS"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="530dp"
             android:layout_marginStart="200dp"/>
+
+        <Button
+            android:id="@+id/regresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGRESAR"
+            android:textSize="10sp"
+            android:layout_marginTop="650dp"
+            android:layout_marginStart="30dp"/>
+
+        <Button
+            android:id="@+id/pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAGAR"
+            android:textSize="10sp"
+            android:layout_marginTop="650dp"
+            android:layout_marginStart="280dp"/>
 
 </RelativeLayout>

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user.equals("adriana") && pass.equals("Adriana")) {
 
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("usuario", user);
                     startActivity(intent);
                 } else {
 
