@@ -20,7 +20,7 @@
         android:layout_marginStart="117dp"/>
 
     <EditText
-        android:id="@+id/Coca_Cola"
+        android:id="@+id/refresco1"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="180dp"
@@ -41,7 +41,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cola Cola   $17"
+        android:text="Cola Cola   $17.00"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:layout_marginTop="140dp"
@@ -57,14 +57,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pepsi   $17"
+        android:text="Pepsi   $17.00"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:layout_marginTop="310dp"
         android:layout_marginStart="140dp"/>
 
     <EditText
-        android:id="@+id/Pepsi"
+        android:id="@+id/refresco2"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="345dp"
@@ -85,14 +85,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fanta   $17"
+        android:text="Fanta   $17.00"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:layout_marginTop="460dp"
         android:layout_marginStart="140dp" />
 
     <EditText
-        android:id="@+id/Fanta"
+        android:id="@+id/refresco3"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="500dp"

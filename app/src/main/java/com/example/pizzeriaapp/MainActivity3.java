@@ -22,7 +22,7 @@ public class MainActivity3 extends AppCompatActivity {
     EditText pizza1;
     EditText pizza2;
     EditText pizza3;
-    double precioTotal;
+    double precioTotal = 0;
     double precio1 = 120.00;
     double precio2 = 135.00;
     double precio3 = 140.00;
@@ -52,10 +52,13 @@ public class MainActivity3 extends AppCompatActivity {
         btnpagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcularPrecioTotal();
-                actualizarCantidades();
-                Intent intent = new Intent(MainActivity3.this, MainActivity5.class);
-                startActivity(intent);
+                    calcularPrecioTotal();
+                    actualizarCantidades();
+                    Intent intent = new Intent(MainActivity3.this, MainActivity5.class);
+                    intent.putExtra("precioTotal", precioTotal);
+                    intent.putExtra("cantidad 1", cantidad1);
+                    intent.putExtra("Cantidad 3", cantidad3);
+                    startActivity(intent);
             }
         });
 
@@ -63,6 +66,7 @@ public class MainActivity3 extends AppCompatActivity {
             restaurarEstado(savedInstanceState);
         }
     }
+
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         guardarEstado(outState);
@@ -96,7 +100,7 @@ public class MainActivity3 extends AppCompatActivity {
         outState.putInt("cantidad 3", cantidad3);
     }
 
-    public void  restaurarEstado(Bundle savedInstanceState) {
+    public void restaurarEstado(Bundle savedInstanceState) {
         cantidad1 = savedInstanceState.getInt("cantidad 1");
         cantidad2 = savedInstanceState.getInt("cantidad 2");
         cantidad3 = savedInstanceState.getInt("cantidad 3");
