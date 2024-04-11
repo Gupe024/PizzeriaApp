@@ -39,9 +39,9 @@ public class MainActivity5 extends AppCompatActivity {
 
                 Intent intent = getIntent();
                 if (intent != null) {
-                    int cantidad1 = intent.getIntExtra("cantidad1", 0);
-                    int cantidad2 = intent.getIntExtra("cantidad2", 0);
-                    int cantidad3 = intent.getIntExtra("cantidad3", 0);
+                    int cantidad1 = intent.getIntExtra("cantidad 1", 0);
+                    int cantidad2 = intent.getIntExtra("cantidad 2", 0);
+                    int cantidad3 = intent.getIntExtra("cantidad 3", 0);
                     double precioTotal = intent.getDoubleExtra("precioTotal", 0.0);
 
 
@@ -54,17 +54,17 @@ public class MainActivity5 extends AppCompatActivity {
 
 
                 if (intent != null) {
-                    int cantidadBebidas1 = intent.getIntExtra("cantidad 1", 0);
-                    int cantidadBebidas2 = intent.getIntExtra("cantidad 2", 0);
-                    int cantidadBebidas3 = intent.getIntExtra("cantidad 3", 0);
-                    double precioTotalBebidas = intent.getDoubleExtra("precio_total_bebidas", 0.0);
+                    int cantidad01 = intent.getIntExtra("cantidad 1", 0);
+                    int cantidad02 = intent.getIntExtra("cantidad 2", 0);
+                    int cantidad03 = intent.getIntExtra("cantidad 3", 0);
+                    double precioTotal1 = intent.getDoubleExtra("precioTotal1", 0.0);
 
 
                     Bebidas.setText("Bebidas:\n" +
-                            "Bebida 1: " + cantidadBebidas1 + "\n" +
-                            "Bebida 2: " + cantidadBebidas2 + "\n" +
-                            "Bebida 3: " + cantidadBebidas3 + "\n" +
-                            "Precio Total de Bebidas: $" + precioTotalBebidas);
+                            "Bebida 1: " + cantidad01 + "\n" +
+                            "Bebida 2: " + cantidad02 + "\n" +
+                            "Bebida 3: " + cantidad03 + "\n" +
+                            "Precio Total de Bebidas: $" + precioTotal1);
                 }
 
                 Toast.makeText(MainActivity5.this, "Gracias por utilizar la App de VitoLuigini", Toast.LENGTH_SHORT).show();

@@ -55,10 +55,10 @@ public class MainActivity3 extends AppCompatActivity {
                 calcularPrecioTotal();
                 actualizarCantidades();
                 Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
-                intent.putExtra("precioTotal", precioTotal);
-                intent.putExtra("cantidad1", cantidad1);
-                intent.putExtra("cantidad2", cantidad2);
-                intent.putExtra("cantidad3", cantidad3);
+                intent.putExtra("precioTotal1", precioTotal);
+                intent.putExtra("Cantidad1", cantidad1);
+                intent.putExtra("Cantidad2", cantidad2);
+                intent.putExtra("Cantidad3", cantidad3);
                 startActivity(intent);
             }
         });

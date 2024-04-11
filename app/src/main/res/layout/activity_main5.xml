@@ -32,7 +32,7 @@
     <EditText
         android:id="@+id/pizzas"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
         android:layout_marginStart="110dp"
         android:hint="Datos..."
@@ -45,7 +45,7 @@
     <EditText
         android:id="@+id/bebidas"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
         android:layout_marginStart="110dp"
         android:hint="Datos..."
@@ -65,7 +65,7 @@
     <EditText
         android:id="@+id/Total"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="380dp"
         android:layout_marginStart="150dp"
         android:hint="Datos..."

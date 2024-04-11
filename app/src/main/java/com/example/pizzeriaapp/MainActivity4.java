@@ -48,10 +48,10 @@ public class MainActivity4 extends AppCompatActivity {
                 actualizarCantidades();
                 calcularPrecioTotal();
                 Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
-                intent.putExtra("precioTotal", precioTotal1);
-                intent.putExtra("Cantidad 1", cantidad01);
-                intent.putExtra("Cantidad 2", cantidad02);
-                intent.putExtra("Cantidad 3", cantidad03);
+                intent.putExtra("precioTotal1", precioTotal1);
+                intent.putExtra("Cantidad_1", cantidad01);
+                intent.putExtra("Cantidad_2", cantidad02);
+                intent.putExtra("Cantidad_3", cantidad03);
                 startActivity(intent);
             }
         });
@@ -89,16 +89,16 @@ public class MainActivity4 extends AppCompatActivity {
     }
 
     public void  guardarEstado(Bundle outState) {
-        outState.putInt("Cantidad 1", cantidad01);
-        outState.putInt("Cantidad 2", cantidad02);
-        outState.putInt("Cantidad 3", cantidad03);
+        outState.putInt("Cantidad_1", cantidad01);
+        outState.putInt("Cantidad_2", cantidad02);
+        outState.putInt("Cantidad_3", cantidad03);
         outState.putDouble("precioTotal", precioTotal1);
     }
 
     public void restaurarEstado(Bundle savedInstanceState) {
-        cantidad01 = savedInstanceState.getInt("Cantidad 1");
-        cantidad02 = savedInstanceState.getInt("Cantidad 2");
-        cantidad03 = savedInstanceState.getInt("Cantidad 3");
+        cantidad01 = savedInstanceState.getInt("Cantidad_1");
+        cantidad02 = savedInstanceState.getInt("Cantidad_2");
+        cantidad03 = savedInstanceState.getInt("Cantidad_3");
         precioTotal1 = savedInstanceState.getDouble("precioTotal");
         refrescos1.setText(String.valueOf(cantidad01));
         refrescos2.setText(String.valueOf(cantidad02));
