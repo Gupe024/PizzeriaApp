@@ -17,13 +17,13 @@ public class MainActivity4 extends AppCompatActivity {
     EditText refrescos1;
     EditText refrescos2;
     EditText refrescos3;
-    double precioTotal;
+    double precioTotal1;
     double precio1 = 17.00;
     double precio2 = 17.00;
     double precio3 = 17.00;
-    int cantidad1 = 0;
-    int cantidad2 = 0;
-    int cantidad3 = 0;
+    int cantidad01 = 0;
+    int cantidad02 = 0;
+    int cantidad03 = 0;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -48,10 +48,10 @@ public class MainActivity4 extends AppCompatActivity {
                 actualizarCantidades();
                 calcularPrecioTotal();
                 Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
-                intent.putExtra("precioTotal", precioTotal);
-                intent.putExtra("Cantidad 1", cantidad1);
-                intent.putExtra("Cantidad 2", cantidad2);
-                intent.putExtra("Cantidad 3", cantidad3);
+                intent.putExtra("precioTotal", precioTotal1);
+                intent.putExtra("Cantidad 1", cantidad01);
+                intent.putExtra("Cantidad 2", cantidad02);
+                intent.putExtra("Cantidad 3", cantidad03);
                 startActivity(intent);
             }
         });
@@ -67,15 +67,15 @@ public class MainActivity4 extends AppCompatActivity {
     }
 
     public void actualizarCantidades() {
-        cantidad1 = obtenerCantidad(refrescos1);
-        cantidad2 = obtenerCantidad(refrescos2);
-        cantidad3 = obtenerCantidad(refrescos3);
+        cantidad01 = obtenerCantidad(refrescos1);
+        cantidad02 = obtenerCantidad(refrescos2);
+        cantidad03 = obtenerCantidad(refrescos3);
     }
 
     public void calcularPrecioTotal() {
-        precioTotal = (cantidad1 * precio1) + (cantidad2 * precio2) + (cantidad3 * precio3);
+        precioTotal1 = (cantidad01 * precio1) + (cantidad01 * precio2) + (cantidad03 * precio3);
 
-        int totalbebidas = cantidad1 + cantidad2 + cantidad3;
+        int totalbebidas = cantidad01 + cantidad02 + cantidad01;
 
         Toast.makeText(MainActivity4.this, "Has elegido " + totalbebidas + " bebidas.", Toast.LENGTH_SHORT).show();
     }
@@ -89,19 +89,19 @@ public class MainActivity4 extends AppCompatActivity {
     }
 
     public void  guardarEstado(Bundle outState) {
-        outState.putInt("Cantidad 1", cantidad1);
-        outState.putInt("Cantidad 2", cantidad2);
-        outState.putInt("Cantidad 3", cantidad3);
-        outState.putDouble("precioTotal", precioTotal);
+        outState.putInt("Cantidad 1", cantidad01);
+        outState.putInt("Cantidad 2", cantidad02);
+        outState.putInt("Cantidad 3", cantidad03);
+        outState.putDouble("precioTotal", precioTotal1);
     }
 
     public void restaurarEstado(Bundle savedInstanceState) {
-        cantidad1 = savedInstanceState.getInt("Cantidad 1");
-        cantidad2 = savedInstanceState.getInt("Cantidad 2");
-        cantidad3 = savedInstanceState.getInt("Cantidad 3");
-        precioTotal = savedInstanceState.getDouble("precioTotal");
-        refrescos1.setText(String.valueOf(cantidad1));
-        refrescos2.setText(String.valueOf(cantidad2));
-        refrescos3.setText(String.valueOf(cantidad3));
+        cantidad01 = savedInstanceState.getInt("Cantidad 1");
+        cantidad02 = savedInstanceState.getInt("Cantidad 2");
+        cantidad03 = savedInstanceState.getInt("Cantidad 3");
+        precioTotal1 = savedInstanceState.getDouble("precioTotal");
+        refrescos1.setText(String.valueOf(cantidad01));
+        refrescos2.setText(String.valueOf(cantidad02));
+        refrescos3.setText(String.valueOf(cantidad03));
     }
 }

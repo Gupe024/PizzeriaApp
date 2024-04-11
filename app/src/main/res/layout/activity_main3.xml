@@ -109,7 +109,7 @@
         android:id="@+id/regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGRESAR"
+        android:text="ANTERIOR"
         android:textSize="10sp"
         android:layout_marginTop="650dp"
         android:layout_marginStart="30dp"/>
@@ -118,9 +118,9 @@
         android:id="@+id/pagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PAGAR"
+        android:text="BEBIDAS"
         android:textSize="10sp"
         android:layout_marginTop="650dp"
-        android:layout_marginStart="280dp"/>
+        android:layout_marginStart="250dp"/>
 
 </RelativeLayout>
