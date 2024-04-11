@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,15 +30,13 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         iniciarButton = findViewById(R.id.iniciar);
 
-
         iniciarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = usuarioEditext.getText().toString();
                 String pass = passwordEditText.getText().toString();
 
-                if (user.equals("adriana") && pass.equals("Adriana")) {
-
+                if (user.equals("Adriana") & pass.equals("adriana")) {
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                     intent.putExtra("usuario", user);
                     startActivity(intent);

@@ -8,11 +8,21 @@
     android:background="@drawable/menu"
     tools:context=".MainActivity2">
 
+        <TextView
+            android:id="@+id/Bienvenidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginStart="150dp"
+            android:hint="Usuario"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/pizza"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="290dp"
             android:layout_marginStart="35dp" />
 
         <TextView
@@ -23,7 +33,7 @@
             android:fontFamily="casual"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_marginTop="265dp"
+            android:layout_marginTop="300dp"
             android:layout_marginStart="240dp"/>
 
         <Button
@@ -31,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ELEGIR PIZZAS"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="340dp"
             android:layout_marginStart="200dp"/>
 
         <ImageView
