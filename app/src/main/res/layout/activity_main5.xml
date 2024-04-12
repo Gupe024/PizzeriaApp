@@ -29,12 +29,12 @@
         android:textColorHint="@color/white"
         android:textColor="@color/white"/>
     
-    <EditText
-        android:id="@+id/pizzas"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textViewPizzas"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="50dp"
         android:hint="Datos..."
         android:textSize="15sp"
         android:textColorHint="@color/white"
@@ -42,32 +42,23 @@
     
 
     
-    <EditText
-        android:id="@+id/bebidas"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textViewBebidas"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="50dp"
         android:hint="Datos..."
         android:textSize="15sp"
         android:textColorHint="@color/white"
         android:textColor="@color/white"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
-        android:layout_marginStart="50dp"
-        android:text="Total a pagar:"
-        android:textSize="15sp"
-        android:textColor="@color/white" />
-
-    <EditText
-        android:id="@+id/Total"
+        android:id="@+id/textViewTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="380dp"
-        android:layout_marginStart="150dp"
+        android:layout_marginStart="110dp"
         android:hint="Datos..."
         android:textSize="15sp"
         android:textColorHint="@color/white"

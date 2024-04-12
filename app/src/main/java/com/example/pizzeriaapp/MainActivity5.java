@@ -1,75 +1,70 @@
 package com.example.pizzeriaapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity5 extends AppCompatActivity {
 
-    Button btnenviar;
-    EditText Pizzas, Bebidas;
-    EditText Total;
-    TextView Usuario;
+    Button btnEnviar;
+    TextView pizzasEditText;
+    TextView bebidasEditText;
+    TextView totalEditText;
+    TextView usuarioTextView;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main5);
 
-        btnenviar = findViewById(R.id.enviar);
-        Pizzas = findViewById(R.id.pizzas);
-        Bebidas = findViewById(R.id.bebidas);
-        Usuario = findViewById(R.id.bienvenidos);
-        Total = findViewById(R.id.Total);
+        btnEnviar = findViewById(R.id.enviar);
+        pizzasEditText = findViewById(R.id.textViewPizzas);
+        bebidasEditText = findViewById(R.id.textViewBebidas);
+        totalEditText = findViewById(R.id.textViewTotal);
+        usuarioTextView = findViewById(R.id.bienvenidos);
 
-        btnenviar.setOnClickListener(new View.OnClickListener() {
+        sharedPreferences = getSharedPreferences("PizzeriaDeVitoLugini", Context.MODE_PRIVATE);
+
+        String usuario = sharedPreferences.getString("usuario", "Usuario");
+        int cantidad1 = sharedPreferences.getInt("cantidad1", 0);
+        int cantidad2 = sharedPreferences.getInt("cantidad2", 0);
+        int cantidad3 = sharedPreferences.getInt("cantidad3", 0);
+        int cantidad01 = sharedPreferences.getInt("cantidad01", 0);
+        int cantidad02 = sharedPreferences.getInt("cantidad02", 0);
+        int cantidad03 = sharedPreferences.getInt("cantidad03", 0);
+        float totalPagar = sharedPreferences.getFloat("precioTotal", 0.0f) + sharedPreferences.getFloat("precioTotal1", 0.0f);
+
+        usuarioTextView.setText("Estimado " + usuario);
+        pizzasEditText.setText("Has seleccionado " + cantidad1 + " pizza de jamón y queso, " + cantidad2 + " pizza de peperoni, " + cantidad3 + " pizza hawaiana.");
+        bebidasEditText.setText("Has seleccionado " + cantidad01 + " Coca-Cola, " + cantidad02 + " Pepsi, " + cantidad03 + " Fanta.");
+        totalEditText.setText("Total a pagar: $" + totalPagar);
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity5.this, "Gracias por utilizar la App de VitoLugini... su pedido fue recibido y en breve se enviará.", Toast.LENGTH_SHORT).show();
 
-                Intent intent = getIntent();
-                if (intent != null) {
-                    int cantidad1 = intent.getIntExtra("cantidad 1", 0);
-                    int cantidad2 = intent.getIntExtra("cantidad 2", 0);
-                    int cantidad3 = intent.getIntExtra("cantidad 3", 0);
-                    double precioTotal = intent.getDoubleExtra("precioTotal", 0.0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
 
+                usuarioTextView.setText("");
+                pizzasEditText.setText("");
+                bebidasEditText.setText("");
+                totalEditText.setText("");
 
-                    Pizzas.setText("Pizzas:\n" +
-                            "Pizza 1: " + cantidad1 + "\n" +
-                            "Pizza 2: " + cantidad2 + "\n" +
-                            "Pizza 3: " + cantidad3 + "\n" +
-                            "Precio Total de Pizzas: $" + precioTotal);
-                }
-
-
-                if (intent != null) {
-                    int cantidad01 = intent.getIntExtra("cantidad 1", 0);
-                    int cantidad02 = intent.getIntExtra("cantidad 2", 0);
-                    int cantidad03 = intent.getIntExtra("cantidad 3", 0);
-                    double precioTotal1 = intent.getDoubleExtra("precioTotal1", 0.0);
-
-
-                    Bebidas.setText("Bebidas:\n" +
-                            "Bebida 1: " + cantidad01 + "\n" +
-                            "Bebida 2: " + cantidad02 + "\n" +
-                            "Bebida 3: " + cantidad03 + "\n" +
-                            "Precio Total de Bebidas: $" + precioTotal1);
-                }
-
-                Toast.makeText(MainActivity5.this, "Gracias por utilizar la App de VitoLuigini", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity5.this, MainActivity.class);
+                startActivity(intent);
             }
         });
-
-    };
+    }
 }

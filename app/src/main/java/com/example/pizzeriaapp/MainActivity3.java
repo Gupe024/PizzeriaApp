@@ -1,24 +1,20 @@
 package com.example.pizzeriaapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.text.BreakIterator;
 
 public class MainActivity3 extends AppCompatActivity {
-    Button btnregresar;
-    Button btnpagar;
+
+    Button btnRegresar;
+    Button btnPagar;
     EditText pizza1;
     EditText pizza2;
     EditText pizza3;
@@ -30,46 +26,65 @@ public class MainActivity3 extends AppCompatActivity {
     int cantidad2 = 0;
     int cantidad3 = 0;
 
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        btnregresar = findViewById(R.id.regresar);
-        btnpagar = findViewById(R.id.pagar);
+        btnRegresar = findViewById(R.id.regresar);
+        btnPagar = findViewById(R.id.pagar);
         pizza1 = findViewById(R.id.pizza1);
         pizza2 = findViewById(R.id.pizza2);
         pizza3 = findViewById(R.id.pizza3);
 
-        btnregresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        sharedPreferences = getSharedPreferences("PizzeriaDeVitoLugini", Context.MODE_PRIVATE);
 
-        btnpagar.setOnClickListener(new View.OnClickListener() {
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcularPrecioTotal();
+
                 actualizarCantidades();
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
-                intent.putExtra("precioTotal1", precioTotal);
-                intent.putExtra("Cantidad1", cantidad1);
-                intent.putExtra("Cantidad2", cantidad2);
-                intent.putExtra("Cantidad3", cantidad3);
-                startActivity(intent);
+                calcularPrecioTotal();
+
+                if (cantidad1 == 0 && cantidad2 == 0 && cantidad3 == 0) {
+                    Toast.makeText(MainActivity3.this, "Debe seleccionar al menos un producto", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    guardarEstado();
+
+                    Intent intent = new Intent(MainActivity3.this, MainActivity5.class);
+                    intent.putExtra("precioTotal", precioTotal);
+                    intent.putExtra("Cantidad1", cantidad1);
+                    intent.putExtra("Cantidad2", cantidad2);
+                    intent.putExtra("Cantidad3", cantidad3);
+                    startActivity(intent);
+                }
             }
         });
 
-        if (savedInstanceState != null) {
-            restaurarEstado(savedInstanceState);
-        }
-    }
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        guardarEstado(outState);
+        btnPagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actualizarCantidades();
+                calcularPrecioTotal();
+
+                if (cantidad1 == 0 && cantidad2 == 0 && cantidad3 == 0) {
+                    Toast.makeText(MainActivity3.this, "Debe seleccionar al menos un producto", Toast.LENGTH_SHORT).show();
+                } else {
+                    guardarEstado();
+                    Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                    intent.putExtra("precioTotal", precioTotal);
+                    intent.putExtra("Cantidad1", cantidad1);
+                    intent.putExtra("Cantidad2", cantidad2);
+                    intent.putExtra("Cantidad3", cantidad3);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        restaurarEstado();
     }
 
     public void actualizarCantidades() {
@@ -80,9 +95,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void calcularPrecioTotal() {
         precioTotal = (cantidad1 * precio1) + (cantidad2 * precio2) + (cantidad3 * precio3);
-
         int totalPizzas = cantidad1 + cantidad2 + cantidad3;
-
         Toast.makeText(MainActivity3.this, "Has elegido " + totalPizzas + " pizzas.", Toast.LENGTH_SHORT).show();
     }
 
@@ -94,17 +107,20 @@ public class MainActivity3 extends AppCompatActivity {
         }
     }
 
-    public void guardarEstado(Bundle outState) {
-        outState.putInt("cantidad 1", cantidad1);
-        outState.putInt("Cantidad 2", cantidad2);
-        outState.putInt("cantidad 3", cantidad3);
+    public void guardarEstado() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("cantidad1", cantidad1);
+        editor.putInt("cantidad2", cantidad2);
+        editor.putInt("cantidad3", cantidad3);
+        editor.putFloat("precioTotal", (float) precioTotal);
+        editor.apply();
     }
 
-    public void  restaurarEstado(Bundle savedInstanceState) {
-        cantidad1 = savedInstanceState.getInt("cantidad 1");
-        cantidad2 = savedInstanceState.getInt("cantidad 2");
-        cantidad3 = savedInstanceState.getInt("cantidad 3");
-        precioTotal = savedInstanceState.getDouble("precioTotal");
+    public void restaurarEstado() {
+        cantidad1 = sharedPreferences.getInt("cantidad1", 0);
+        cantidad2 = sharedPreferences.getInt("cantidad2", 0);
+        cantidad3 = sharedPreferences.getInt("cantidad3", 0);
+        precioTotal = sharedPreferences.getFloat("precioTotal", 0.0f);
         pizza1.setText(String.valueOf(cantidad1));
         pizza2.setText(String.valueOf(cantidad2));
         pizza3.setText(String.valueOf(cantidad3));

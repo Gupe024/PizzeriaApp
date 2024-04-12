@@ -18,7 +18,6 @@ public class MainActivity2 extends AppCompatActivity {
     Button btnBebidas;
 
     Button btnregresar;
-    Button btnpagar;
 
     TextView bienvenidos;
 
@@ -30,7 +29,6 @@ public class MainActivity2 extends AppCompatActivity {
         btnPizzas = findViewById(R.id.pizzas);
         btnBebidas = findViewById(R.id.bebidas);
         btnregresar = findViewById(R.id.regresar);
-        btnpagar = findViewById(R.id.pagar);
         bienvenidos = findViewById(R.id.Bienvenidos);
 
         btnPizzas.setOnClickListener(new View.OnClickListener() {
@@ -59,19 +57,11 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        btnpagar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity5.class);
-                startActivity(intent);
-            }
-
-        });
 
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("usuario")) {
             String usuario = intent.getStringExtra("usuario");
-            bienvenidos.setText("Bienvenida " + usuario);
+            bienvenidos.setText("Bienvenid@ " + usuario);
         }
 
     }

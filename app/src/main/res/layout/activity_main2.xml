@@ -42,7 +42,8 @@
             android:layout_height="wrap_content"
             android:text="ELEGIR PIZZAS"
             android:layout_marginTop="340dp"
-            android:layout_marginStart="200dp"/>
+            android:layout_marginStart="200dp"
+            android:backgroundTint="#4CAF50"/>
 
         <ImageView
             android:layout_width="150dp"
@@ -68,7 +69,8 @@
             android:layout_height="wrap_content"
             android:text="ELEGIR BEBIDAS"
             android:layout_marginTop="530dp"
-            android:layout_marginStart="200dp"/>
+            android:layout_marginStart="200dp"
+            android:backgroundTint="#4CAF50"/>
 
         <Button
             android:id="@+id/regresar"
@@ -77,15 +79,8 @@
             android:text="REGRESAR"
             android:textSize="10sp"
             android:layout_marginTop="650dp"
-            android:layout_marginStart="30dp"/>
+            android:layout_marginStart="150dp"
+            android:backgroundTint="#4CAF50"/>
 
-        <Button
-            android:id="@+id/pagar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PAGAR"
-            android:textSize="10sp"
-            android:layout_marginTop="650dp"
-            android:layout_marginStart="280dp"/>
 
 </RelativeLayout>
